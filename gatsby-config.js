@@ -6,7 +6,7 @@
 
 module.exports = {
   siteMetadata: {
-    title: "WebDev Portfolio",
+    title: "TelaCreativ'",
     description: "This is WebDev Portfolio Site",
     author: "@webdev",
     twitterUsername: "@john_smilga",
@@ -33,7 +33,7 @@ module.exports = {
         //   contentTypes : `jobs`, `projects`, `blogs`,
         //   singleType : `about`
         //  ONLY ADD TO ARRAY IF YOU HAVE DATA IN STRAPI !!!!
-        contentTypes: [],
+        contentTypes: [`jobs`, `projects`],
         singleTypes: [],
       },
     },
