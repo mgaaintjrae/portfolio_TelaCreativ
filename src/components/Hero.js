@@ -1,4 +1,5 @@
 import React from "react"
+import DarkTheme from 'react-dark-theme'
 import Image from "gatsby-image"
 import { Link } from "gatsby"
 import { graphql, useStaticQuery } from "gatsby"
@@ -17,6 +18,15 @@ const query = graphql`
 `
 
 const Hero = () => {
+  const lightTheme = {
+    background: 'white',
+    text: 'black',
+  }
+  
+  const darkTheme = {
+    background: 'black',
+    text: 'white',
+  }
   const {
     file: {
       childImageSharp: { fluid },
@@ -25,6 +35,9 @@ const Hero = () => {
 
   return (
     <header className="hero">
+      <div className="toggle-dark-theme">
+        <DarkTheme light={lightTheme} dark={darkTheme} />        
+      </div>
       <div className="section-center hero-center">
         <article className="hero-info">
           <div>
