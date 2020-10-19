@@ -4,6 +4,16 @@ Fonts
 ===============
 */
 /* @import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto:400,700&display=swap"); */
+@font-face {
+  font-family: "Prime";
+  src: url("../fonts/Prime-Regular.eot"),
+    url("../fonts/Prime-Regular.ttf") format("truetype"),
+    url("../fonts/Prime-Regular.svg#Prime-Regular") format("svg"),
+    url("../fonts/Prime-Regular.woff2") format("woff2"),
+    url("../fonts/Prime-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
 
 /*
 =============== 
@@ -28,6 +38,7 @@ Variables
   /* --clrPrimary10: #06062B; */
   /* darkest grey - used for headings */
   --clrGrey1: hsl(209, 61%, 16%);
+  --clrGrey2: #343434;
   --clrGrey3: hsl(209, 34%, 30%);
   --clrGrey4: hsl(209, 28%, 39%);
   /* grey used for paragraphs */
@@ -39,7 +50,7 @@ Variables
   --clrRedDark: hsl(360, 67%, 44%);
   --clrRedLight: hsl(360, 71%, 66%);
   --clrWhite: #fff;
-  --ff-primary: "Roboto", sans-serif;
+  --ff-primary: "Prime", sans-serif;
   --ff-secondary: "Open Sans", sans-serif;
   --transition: all 0.3s linear;
   --spacing: 0.2rem;
@@ -72,7 +83,7 @@ body {
 
   background-color: var(--background);
   color: var(--text);
-  transition: .7s;
+  /* transition: .7s; */
 }
 ul {
   list-style-type: none;
@@ -167,7 +178,7 @@ p {
 .section-center {
   width: 90vw;
   margin: 0 auto;
-  max-width: 1170px;
+  max-width: 1400px;
 }
 @media screen and (min-width: 992px) {
   .section-center {
@@ -226,7 +237,7 @@ Navbar
 }
 .nav-center {
   width: 90vw;
-  max-width: 1170px;
+  max-width: 1400px;
   margin: 0 auto;
 }
 .nav-header {
@@ -414,7 +425,7 @@ Hero
 .toggle-dark-theme {
   position: fixed;
   right: 0;
-  z-index:10;
+  z-index: 10;
   margin: 1em;
 }
 
@@ -425,6 +436,7 @@ Hero
   height: 100vh;
   background: var(--clrPrimary10);
   position: relative;
+  transition: var(--transition);
 }
 
 .hero-center {
@@ -437,11 +449,20 @@ Hero
   margin-bottom: 0.5rem;
   margin-left: 0;
 }
+.hero .name {
+  font-size: 1rem;
+}
 .hero-info {
   background: var(--clrPrimary10);
+  transition: var(--transition);
 }
 .hero-img {
   display: none;
+}
+.hero-img .gatsby-image-wrapper img picture img {
+  left: 112px !important;
+  width: 110% !important;
+  height: 100% !important;
 }
 .hero-info h4 {
   color: var(--clrGrey5);
@@ -462,6 +483,7 @@ Hero
     right: 0;
     bottom: 0;
     background: var(--clrWhite);
+    transition: var(--transition);
   }
   .hero-center {
     grid-template-columns: repeat(12, 1fr);
@@ -575,6 +597,7 @@ Jobs
   cursor: pointer;
   padding: 0.25rem 0;
   line-height: 1;
+  color: var(--clrGrey1);
 }
 .job-btn:hover {
   color: var(--clrPrimary5);
@@ -841,14 +864,14 @@ Footer
 */
 .footer {
   height: 9rem;
-  background: #222;
+  background: var(--clrGrey2);
   text-align: center;
   display: grid;
   place-items: center;
 }
 .footer h4 {
   margin-top: 0.5rem;
-  color: var(--clrWhite);
+  color: var(--clrGrey9);
   font-weight: normal;
   text-transform: uppercase;
 }
@@ -859,7 +882,7 @@ Footer
   margin: 0 auto 1rem auto;
 }
 .footer .social-link {
-  color: var(--clrWhite);
+  color: var(--clrGrey9);
 }
 .footer .social-link:hover {
   color: var(--clrPrimary5);
